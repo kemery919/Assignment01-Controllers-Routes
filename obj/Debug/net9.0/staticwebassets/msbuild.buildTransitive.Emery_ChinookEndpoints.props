@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Emery_ChinookEndpoints.props" />
+</Project>

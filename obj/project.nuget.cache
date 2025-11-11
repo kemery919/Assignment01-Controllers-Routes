@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bMzzG8qX4D8=",
+  "dgSpecHash": "87h7vWnAe5Y=",
   "success": true,
   "projectFilePath": "C:\\Users\\Kyle4\\Desktop\\School\\ProgrammingDegree\\Sem4\\Emery_ChinookEndpoints\\Emery_ChinookEndpoints.csproj",
   "expectedPackageFiles": [
@@ -81,7 +81,7 @@
     "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.10\\microsoft.entityframeworkcore.relational.9.0.10.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\9.0.10\\microsoft.entityframeworkcore.sqlite.9.0.10.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\9.0.10\\microsoft.entityframeworkcore.sqlite.core.9.0.10.nupkg.sha512",
-    "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.10\\microsoft.entityframeworkcore.tools.9.0.10.nupkg.sha512",
+    "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.0\\microsoft.entityframeworkcore.tools.10.0.0.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.extensions.apidescription.server\\9.0.0\\microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.10\\microsoft.extensions.caching.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.10\\microsoft.extensions.caching.memory.9.0.10.nupkg.sha512",
@@ -113,6 +113,7 @@
     "C:\\Users\\Kyle4\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
+    "C:\\Users\\Kyle4\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.10\\sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\sqlitepclraw.core\\2.1.10\\sqlitepclraw.core.2.1.10.nupkg.sha512",
     "C:\\Users\\Kyle4\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.10\\sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",

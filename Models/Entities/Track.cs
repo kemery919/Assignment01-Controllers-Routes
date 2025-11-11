@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
 
-namespace ChinookDtoExample.Models.Entities {
-    [DebuggerDisplay("{Name} (TrackId = {TrackId})")]
+namespace Emery_ChinookEndpoints.Models.Entities {
+
     public class Track {
         [Key]
         public int TrackId { get; set; }

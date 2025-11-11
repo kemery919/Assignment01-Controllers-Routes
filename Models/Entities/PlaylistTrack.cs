@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ChinookDtoExample.Models.Entities;
+namespace Emery_ChinookEndpoints.Models.Entities;
 
 [PrimaryKey(nameof(PlaylistId), nameof(TrackId))]
 public class PlaylistTrack {

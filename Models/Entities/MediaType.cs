@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
-namespace ChinookDtoExample.Models.Entities {
+namespace Emery_ChinookEndpoints.Models.Entities {
     [DebuggerDisplay("{Name} (MediaTypeId = {MediaTypeId})")]
     public class MediaType {
         [Key]

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
-namespace ChinookDtoExample.Models.Entities {
+namespace Emery_ChinookEndpoints.Models.Entities {
     [DebuggerDisplay("{FirstName} {LastName} (CustomerId = {CustomerId})")]
     public class Customer {
         [Key]
