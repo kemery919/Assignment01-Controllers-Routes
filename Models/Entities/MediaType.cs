@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 namespace Emery_ChinookEndpoints.Models.Entities {
-    [DebuggerDisplay("{Name} (MediaTypeId = {MediaTypeId})")]
+
     public class MediaType {
         [Key]
         public int MediaTypeId { get; set; }

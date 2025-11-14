@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
 namespace Emery_ChinookEndpoints.Models.Entities {
-    [DebuggerDisplay("{FirstName} {LastName} (EmployeeId = {EmployeeId})")]
+
     public class Employee {
         [Key]
         public int EmployeeId { get; set; }

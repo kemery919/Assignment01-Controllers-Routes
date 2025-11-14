@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
 namespace Emery_ChinookEndpoints.Models.Entities {
-    [DebuggerDisplay("{Title} (AlbumId = {AlbumId})")]
+
     public class Album {
         [Key]
         public int AlbumId { get; set; }

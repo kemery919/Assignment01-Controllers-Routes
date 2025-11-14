@@ -1,0 +1,67 @@
+using Emery_ChinookEndpoints.Data;
+using Emery_ChinookEndpoints.Models.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace Emery_ChinookEndpoints.Controllers {
+  [Route("api/[controller]")]
+  [ApiController]
+  public class InvoiceController : ControllerBase {
+    private readonly ApplicationDbContext _context;
+
+    public InvoiceController(ApplicationDbContext context) {
+      _context = context;
+    }
+
+    // Get All Invoices
+    [HttpGet("")] 
+    public async Task<ActionResult<List<Invoice>>> GetAllInvoices() {
+      var invoices = await _context.Invoice.ToListAsync();
+
+      return Ok(invoices);
+    }
+    
+    // Get Invoice by ID
+    [HttpGet("{invoiceId:int}")] 
+    public async Task<ActionResult<Invoice>> GetInvoiceById(int invoiceId) {
+      var invoice = await _context.Invoice.SingleOrDefaultAsync(invoice => invoice.InvoiceId == invoiceId);
+
+      if (invoice == null) {
+        return NotFound($"No invoice found with the ID: {invoiceId}");
+      }
+
+      return Ok(invoice);
+    }
+
+    // Delete Invoice
+    [HttpDelete("{invoiceId:int}")] 
+    public async Task<ActionResult> DeleteInvoice(int invoiceId) {
+      var invoice = await _context.Invoice.SingleOrDefaultAsync(invoice => invoice.InvoiceId == invoiceId);
+
+      if (invoice == null) {
+        return NotFound($"No invoice found with the ID: {invoiceId}");
+      }
+
+      _context.Invoice.Remove(invoice);
+      await _context.SaveChangesAsync();
+
+      return NoContent();
+    }
+
+    [HttpGet("stats")]
+    public async Task<ActionResult<List<Invoice>>> GetInvoiceStats(int topNumExpensiveInvoices) {
+      if (topNumExpensiveInvoices <= 0) {
+        return BadRequest("Number of invoices must be greater than 0");
+      }
+      
+      var invoices = await _context.Invoice
+        .OrderByDescending(invoice => (double)invoice.Total)
+        .GroupBy(invoice => invoice.BillingState ?? "No Billing State")
+        .Select(group => group.Take(topNumExpensiveInvoices))
+        .ToListAsync();
+
+      return Ok(invoices);
+    }
+
+  }
+}

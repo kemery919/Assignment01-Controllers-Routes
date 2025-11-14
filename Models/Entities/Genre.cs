@@ -2,7 +2,7 @@
 using System.Diagnostics;
 
 namespace Emery_ChinookEndpoints.Models.Entities {
-    [DebuggerDisplay("{Name} (GenreId = {GenreId})")]
+
     public class Genre {
         [Key]
         public int GenreId { get; set; }
