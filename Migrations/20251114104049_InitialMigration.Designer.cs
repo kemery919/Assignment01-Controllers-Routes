@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Emery_ChinookEndpoints.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251111181744_InitialMigration")]
+    [Migration("20251114104049_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />

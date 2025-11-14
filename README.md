@@ -2,6 +2,11 @@
 ## Software Design III
 ### Assignment 01 - Controllers & Routes
 
+#### Re-populate the database by running the bash script using the following bash terminal command:
+./repopDb.sh
+
+Then manually run the query from /Data/chinook_data.sql
+
 #### Album Controller
 - Get All Albums [GET api/album]
 - Get Album by ID [GET api/album{albumId}]
@@ -17,7 +22,6 @@
 - Get Artist by ID [GET api/artist/{artistId}]
 - Delete Artist [DELETE api/artist/{artistId}]
 - Get Artist Stats [GET api/artist/stats]
-  + THIS IS NOT DONE YET
 
 #### Customer Controller
 - Get All Customers [GET api/customer]
@@ -29,11 +33,9 @@
 - Get Invoice by ID [GET api/invoice/{invoiceId}]
 - Delete Invoice [DELETE api/invoice/{invoiceId}]
 - Get Invoice Stats [GET api/invoice/stats]
-  + THIS IS NOT DONE YET
 
 #### Playlist Controller
 - Get All Playlists [GET api/playlist]
 - Get Playlist by ID [GET api/playlist/{playlistId}]
 - Delete Playlist [DELETE api/playlist/{playlistId}]
 - Get Expensive Playlist [GET api/playlist/top-expensive]
-  + THIS IS NOT DONE YET
