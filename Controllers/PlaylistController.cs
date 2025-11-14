@@ -54,8 +54,8 @@ namespace Emery_ChinookEndpoints.Controllers {
         .Select(pl => new { PlaylistId = pl.PlaylistId, 
                             Name = pl.Name,
                             SongCount = pl.Tracks.Count, 
-                            TotalExpense = (double)pl.Tracks.Sum(t => t.UnitPrice) })
-        .OrderByDescending(pl => pl.TotalExpense)
+                            PlaylistExpense = (double)pl.Tracks.Sum(t => t.UnitPrice) })
+        .OrderByDescending(pl => pl.PlaylistExpense)
         .Take(numTopExpensive)
         .ToListAsync();
 
