@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Emery_ChinookEndpoints")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecd02255de909c6aff46be04033a2900e593e982")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b3a8edfa411efb9039acf907b8ec46acdd54aa5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Emery_ChinookEndpoints")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Emery_ChinookEndpoints")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
