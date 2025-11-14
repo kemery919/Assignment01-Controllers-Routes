@@ -17,19 +17,37 @@ namespace Emery_ChinookEndpoints.Controllers {
     // Get All Artists
     [HttpGet("")]
     public async Task<ActionResult<List<Artist>>> GetAllArtists() {
-      var artists = await _context.Artist.ToListAsync();
+      var artists = await _context.Artist
+        .Include(ar => ar.Albums)
+        .ToListAsync();
 
-      return Ok(artists);
+      List<ArtistWithAlbumsDto> artistDtos = new List<ArtistWithAlbumsDto>();
+      foreach (Artist artist in artists) {
+        artistDtos.Add(new ArtistWithAlbumsDto {
+          ArtistId = artist.ArtistId,
+          Name = artist.Name,
+          AlbumCount = artist.Albums.Count,
+          Albums = artist.Albums.Select(al => new AlbumNameDto {
+            Title = al.Title
+          }).ToList()
+        });
+      } 
+
+      return Ok(artistDtos);
     }
 
     // Get Artist by ID
     [HttpGet("{artistId:int}")] 
     public async Task<ActionResult<Artist>> GetArtistById(int artistId) {
-      var artist = await _context.Artist.SingleOrDefaultAsync(ar => ar.ArtistId == artistId);
-
       if (artist == null) {
         return NotFound($"No artist found with the ID: {artistId}");
       }
+      
+      var artist = await _context.Artist
+        .Include(ar => ar.Albums)
+        .SingleOrDefaultAsync(ar => ar.ArtistId == artistId);
+
+      
 
       return Ok(artist);
     }

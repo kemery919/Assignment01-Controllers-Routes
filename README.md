@@ -19,31 +19,31 @@ Then manually run the query from /Data/chinook_data.sql
 
 #### Artist Controller
 - Get All Artists [GET api/artist]
-  + Missing albums
+  * Missing albums
 - Get Artist by ID [GET api/artist/{artistId}]
-  + Missing albums
+  * Missing albums
 - Delete Artist [DELETE api/artist/{artistId}]
 - Get Artist Stats [GET api/artist/stats]
 
 #### Customer Controller
 - Get All Customers [GET api/customer]
-  + Missing support rep include
+  * Missing support rep include
 - Get Customer by ID [GET api/customer/{customerId}]
 - Delete Customer [DELETE api/customer/{customerId}]
 
 #### Invoice Controller
 - Get All Invoices [GET api/invoice]
-  + Missing customer
+  * Missing customer
 - Get Invoice by ID [GET api/invoice/{invoiceId}]
-  + Missing customer
+  * Missing customer
 - Delete Invoice [DELETE api/invoice/{invoiceId}]
 - Get Invoice Stats [GET api/invoice/stats]
-  + Missing customer
+  * Missing customer
 
 #### Playlist Controller
 - Get All Playlists [GET api/playlist]
-  + Missing tracks
+  * Missing tracks
 - Get Playlist by ID [GET api/playlist/{playlistId}]
-  + Missing customer
+  * Missing customer
 - Delete Playlist [DELETE api/playlist/{playlistId}]
 - Get Expensive Playlist [GET api/playlist/top-expensive]
