@@ -15,6 +15,7 @@ Then manually run the query from /Data/chinook_data.sql
   + Search by Title
   + Search by Artist Name
   + Does NOT allow BOTH to be input at the same time
+  + Added check for if terms exist but are not in the database
 - Get Albums by Artist [GET api/album/albums-by-artist]
 
 #### Artist Controller
