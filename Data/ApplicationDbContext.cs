@@ -20,8 +20,6 @@ public class ApplicationDbContext : DbContext {
     public DbSet<Track> Track { get; set; } = default!;
     public DbSet<PlaylistTrack> PlaylistTrack { get; set; } = default!;
 
-    // Added this to modify intial EFCore auto creation
-
     protected override void OnModelCreating(ModelBuilder modelBuilder){
         modelBuilder.Entity<Playlist>()
             .HasMany(pl => pl.Tracks)

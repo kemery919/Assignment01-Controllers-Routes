@@ -39,7 +39,7 @@ namespace Emery_ChinookEndpoints.Controllers {
     // Get Artist by ID
     [HttpGet("{artistId:int}")] 
     public async Task<ActionResult<Artist>> GetArtistById(int artistId) {
-      if (artist == null) {
+      if (artistId == null) {
         return NotFound($"No artist found with the ID: {artistId}");
       }
       

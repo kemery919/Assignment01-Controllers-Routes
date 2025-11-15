@@ -127,6 +127,10 @@ namespace Emery_ChinookEndpoints.Controllers {
             .ThenInclude(t => t.MediaType)
           .SingleOrDefaultAsync(al => al.Title == albumName);;
 
+        if (album == null) {
+          return NotFound($"No album found with the title: {albumName}");
+        }
+
         ArtistDto artistDto = new ArtistDto {
           ArtistId = album.ArtistId,
           Name = album.Artist.Name
@@ -173,24 +177,28 @@ namespace Emery_ChinookEndpoints.Controllers {
           .Where(al => al.Artist.Name.Contains(artist))
           .ToListAsync();
 
-          List<AlbumWithArtistAndTrackNamesDto> albumDtos = new List<AlbumWithArtistAndTrackNamesDto>();
-          foreach (Album album in albums) {
-            List<TrackNameDto> trackNameDtos = new List<TrackNameDto>();
-            foreach (Track track in album.Tracks) {
-              trackNameDtos.Add(new TrackNameDto {
-                TrackName = track.Name
-              });
-            }
+        if (albums.Count == 0) {
+          return NotFound($"No artist found with the name: {artist}");
+        }
 
-            albumDtos.Add(new AlbumWithArtistAndTrackNamesDto {
-              AlbumId = album.AlbumId,
-              Title = album.Title,
-              ArtistId = album.ArtistId,
-              Artist = new ArtistNameDto {
-                Name = album.Artist.Name
-              },
-              Tracks = trackNameDtos
+        List<AlbumWithArtistAndTrackNamesDto> albumDtos = new List<AlbumWithArtistAndTrackNamesDto>();
+        foreach (Album album in albums) {
+          List<TrackNameDto> trackNameDtos = new List<TrackNameDto>();
+          foreach (Track track in album.Tracks) {
+            trackNameDtos.Add(new TrackNameDto {
+              TrackName = track.Name
             });
+          }
+
+          albumDtos.Add(new AlbumWithArtistAndTrackNamesDto {
+            AlbumId = album.AlbumId,
+            Title = album.Title,
+            ArtistId = album.ArtistId,
+            Artist = new ArtistNameDto {
+              Name = album.Artist.Name
+            },
+            Tracks = trackNameDtos
+          });
         }
 
         return Ok(albumDtos);
