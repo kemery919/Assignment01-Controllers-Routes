@@ -45,6 +45,14 @@ namespace Emery_ChinookEndpoints.Controllers {
       
       var artist = await _context.Artist
         .Include(ar => ar.Albums)
+        .Select(ar => new ArtistWithAlbumsDto {
+          ArtistId = ar.ArtistId,
+          Name = ar.Name,
+          AlbumCount = ar.Albums.Count,
+          Albums = ar.Albums.Select(al => new AlbumNameDto {
+            Title = al.Title
+          }).ToList()
+        })
         .SingleOrDefaultAsync(ar => ar.ArtistId == artistId);
 
       

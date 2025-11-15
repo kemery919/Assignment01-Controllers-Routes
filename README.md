@@ -20,9 +20,7 @@ Then manually run the query from /Data/chinook_data.sql
 
 #### Artist Controller
 - Get All Artists [GET api/artist]
-  * Missing albums
 - Get Artist by ID [GET api/artist/{artistId}]
-  * Missing albums
 - Delete Artist [DELETE api/artist/{artistId}]
 - Get Artist Stats [GET api/artist/stats]
 
