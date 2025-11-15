@@ -40,8 +40,6 @@ Then manually run the query from /Data/chinook_data.sql
 
 #### Playlist Controller
 - Get All Playlists [GET api/playlist]
-  * Missing tracks
 - Get Playlist by ID [GET api/playlist/{playlistId}]
-  * Missing tracks
 - Delete Playlist [DELETE api/playlist/{playlistId}]
 - Get Expensive Playlist [GET api/playlist/top-expensive]

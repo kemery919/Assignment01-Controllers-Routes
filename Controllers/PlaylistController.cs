@@ -16,7 +16,17 @@ namespace Emery_ChinookEndpoints.Controllers {
     // Get All Playlists
     [HttpGet("")] 
     public async Task<ActionResult<List<Playlist>>> GetAllPlaylists() {
-      var playlists = await _context.Playlist.ToListAsync();
+      var playlists = await _context.Playlist
+        .Include(pl => pl.Tracks)
+        .Select(pl => new { 
+          PlaylistId = pl.PlaylistId,
+          Name = pl.Name,
+          TrackCount = pl.Tracks.Count,
+          Tracks = pl.Tracks.Select(t => new {
+            Name = t.Name
+          }).ToList()
+        })          
+        .ToListAsync();
 
       return Ok(playlists);
     }
@@ -24,7 +34,17 @@ namespace Emery_ChinookEndpoints.Controllers {
     // Get Playlist by ID
     [HttpGet("{playlistId:int}")] 
     public async Task<ActionResult<Playlist>> GetPlaylistById(int playlistId) {
-      var playlist = await _context.Playlist.SingleOrDefaultAsync(pl => pl.PlaylistId == playlistId);
+      var playlist = await _context.Playlist
+        .Include(pl => pl.Tracks)
+        .Select(pl => new { 
+          PlaylistId = pl.PlaylistId,
+          Name = pl.Name,
+          TrackCount = pl.Tracks.Count,
+          Tracks = pl.Tracks.Select(t => new {
+            Name = t.Name
+          }).ToList()
+        })
+        .SingleOrDefaultAsync(pl => pl.PlaylistId == playlistId);
 
       if (playlist == null) {
         return NotFound($"No playlist found with the ID: {playlistId}");
