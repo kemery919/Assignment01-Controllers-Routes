@@ -26,7 +26,6 @@ Then manually run the query from /Data/chinook_data.sql
 
 #### Customer Controller
 - Get All Customers [GET api/customer]
-  * Missing support rep include
 - Get Customer by ID [GET api/customer/{customerId}]
 - Delete Customer [DELETE api/customer/{customerId}]
 
