@@ -72,20 +72,22 @@ namespace Emery_ChinookEndpoints.Controllers {
       return Ok(groupedInvoices);
     }
 
-    [HttpGet("stats2")]
-    public async Task<ActionResult<List<Invoice>>> GetInvoiceStats2(int topNumExpensiveInvoices) {
-      if (topNumExpensiveInvoices <= 0) {
-        return BadRequest("Number of invoices must be greater than 0");
-      }
-      
-      var invoices = await _context.Invoice
-        .OrderByDescending(invoice => (double)invoice.Total)
-        .GroupBy(invoice => invoice.BillingState ?? "No Billing State")
-        .Select(group => group.Take(topNumExpensiveInvoices))
-        .ToListAsync();
+    // This is commented out because it is the same as the one above but it does not work correctly
 
-      return Ok(invoices);
-    }
+    // [HttpGet("stats2")]
+    // public async Task<ActionResult<List<Invoice>>> GetInvoiceStats2(int topNumExpensiveInvoices) {
+    //   if (topNumExpensiveInvoices <= 0) {
+    //     return BadRequest("Number of invoices must be greater than 0");
+    //   }
+      
+    //   var invoices = await _context.Invoice
+    //     .OrderByDescending(invoice => (double)invoice.Total)
+    //     .GroupBy(invoice => invoice.BillingState ?? "No Billing State")
+    //     .Select(group => group.Take(topNumExpensiveInvoices))
+    //     .ToListAsync();
+
+    //   return Ok(invoices);
+    // }
 
   }
 }
